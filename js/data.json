@@ -1,0 +1,8 @@
+{"data":{
+    "about":"<p>Hello, I'm <span class='pink'>Emily Renee Iverson</span>, 20 year old Computer science major (\nSoon to be graduate) at the University of Minnesota, Preparing to work at UnitedHealth Group. \nMy favorite Languages for projects are Python and Javascript, although I also have experience in\nC, C++, Ocaml, Java, HTML, CSS, SQL, and PHP to name a few.</p>\n<p>My main passions are Coding, Baking, Knitting, and Gaming, an interesting combo for sure.</p>",
+    "projects":[
+        "<a class = 'pink' href='https://step-set.org/'>Stepset</a> is a startup that aims to connect people looking to make startups. I was\ncontacted due to my interest in the project and experience in web development from a class I took. An AGILE\ndevelopment porcess was used to ensure the team could finish on time. My responsibilites were mainly on the\nback-end working with a MySQL database and PHP to create dynamic webpages, \nI created a login system with email verification as well as encrypted passwords,\nA way to store and search for projects, and storage of profiles. I also taught other team members about best practices\nwith SQL to ensure SQL-injection was not possible and all data was properly encrypted."
+        
+    ]    
+    }
+}

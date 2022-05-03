@@ -1,4 +1,12 @@
 let aboutHeader = "Who Am I?";
+google.load("jquery", "1");
+
+google.setOnLoadCallback(function() {
+    $.getJSON("https://emilyiverson.net/data.json", function(data){
+        alert(data);
+    });
+});
+
 
 let workHeader1 = "ActiFi";
 let workHeader2 = "temp1"
@@ -9,19 +17,9 @@ let middleButtons = `<button class="bottom" onclick="prevPage()">Prev</button>
 <button class="bottom" onclick="nextPage()">Next</button>`;
 let lastButtons = `<button class="bottom" onclick="prevPage()">Prev</button>`;
 
-let aboutContent = `<p>Hello, I'm <span class="pink">Emily Renee Iverson</span>, 20 year old Computer science major (
-Soon to be graduate) at the University of Minnesota, Preparing to work at UnitedHealth Group. 
-My favorite Languages for projects are Python and Javascript, although I also have experience in
-C, C++, Ocaml, Java, HTML, CSS, SQL, and PHP to name a few.</p>
-<p>My main passions are Coding, Baking, Knitting, and Gaming, an interesting combo for sure.</p>`;
+let aboutContent = `about`;
 
-let projectsContent1 = `<a class = 'pink' href='https://step-set.org/'>Stepset</a> is a startup that aims to connect people looking to make startups. I was
-contacted due to my interest in the project and experience in web development from a class I took. An AGILE
-development porcess was used to ensure the team could finish on time. My responsibilites were mainly on the
-back-end working with a MySQL database and PHP to create dynamic webpages, 
-I created a login system with email verification as well as encrypted passwords,
-A way to store and search for projects, and storage of profiles. I also taught other team members about best practices
-with SQL to ensure SQL-injection was not possible and all data was properly encrypted.`
+let projectsContent1 = `projects`
 
 let projectsContent2 = `<a href="https://github.com/EmilyTheCleric/gopher_grades_bot" style="color:#6E5494">GopherGrades Bot</a> 
 is a discord bot made for the University of Minnesota, based off of the website <a href="https://gophergrades.com/"> of the same name</a>.
