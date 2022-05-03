@@ -13,11 +13,18 @@ let secondLinkDiv = document.getElementById('second-link-div');
 let about = document.getElementById('about');
 let projects = document.getElementById('projects');
 let work = document.getElementById('workexp');
+let art = document.getElementById('art');
 let content = document.getElementById('content');
 let contentText = document.getElementById('content-text');
 let contentHeader = document.getElementById('content-header');
 let contentSubHeader = document.getElementById('content-subheader');
 let buttons = document.getElementById('bottom-buttons');
+let current_section = "";
+let jsonData="";
+$.getJSON( "https://emilyiverson.net/data.json", function( data ) {
+    jsonData=data.data
+    console.log(jsonData)
+});
 
 function restoreToPrev() {
     content.hidden = true;
@@ -107,40 +114,51 @@ function prevPage() {
 }
 
 function activateAbout() {
+    if(current_section!=""){
+        current_section.style.color="#757575";
+        current_section="";
+    }
+    current_section=document.getElementById('about');
     about.style.color = "#ff94d6";
-    about.removeEventListener('click', activateAbout); // Removes ability to click
-    document.getElementById('about-underline').classList.remove("underline");
-    moveUp("about");
-    contentText.innerHTML = aboutContent;
-    contentHeader.innerHTML = aboutHeader;
-    contentSubHeader.innerHTML = "";
-    buttons.innerHTML = "";
 }
 
 function activateProjects() {
+    if(current_section!=""){
+        current_section.style.color="#757575";
+        current_section="";
+    }
+        
+    current_section=document.getElementById('projects');
     projects.style.color = "#ff94d6";
-    projects.removeEventListener('click', activateProjects); // Removes ability to click
-    document.getElementById('projects-underline').classList.remove("underline");
-    contentText.innerHTML = projectsContent1;
-    contentHeader.innerHTML = projectsHeaderArr[0];
-    contentSubHeader.innerHTML = projectsH2Arr[0];
-    buttons.innerHTML = firstButtons;
-    projectsPage = 0;
-    moveUp("projects");
+
 }
 
 function activateWork() {
+    if(current_section!=""){
+        current_section.style.color="#757575";
+        current_section="";
+    }
+    current_section=document.getElementById('workexp');
+    
     work.style.color = "#ff94d6";
-    work.removeEventListener('click', activateWork); // Removes ability to click
-    document.getElementById('work-underline').classList.remove("underline");
-    contentText.innerHTML = workContent1;
-    contentHeader.innerHTML = workHeaderArr[0];
-    contentSubHeader.innerHTML = workH2Arr[0];
-    buttons.innerHTML = firstButtons;
-    workPage = 0;
-    moveUp("work");
+
+}
+
+function activateArt() {
+    if(current_section!=""){
+        current_section.style.color="#757575";
+        current_section="";
+    }
+    current_section=document.getElementById('art');
+
+    art.style.color = "#ff94d6";
+}
+
+function updateContent(get){
+
 }
 
 about.addEventListener('click', activateAbout);
 projects.addEventListener('click', activateProjects);
 work.addEventListener('click', activateWork);
+art.addEventListener('click', activateArt);
