@@ -2,7 +2,7 @@ let aboutHeader = "Who Am I?";
 google.load("jquery", "1");
 
 google.setOnLoadCallback(function() {
-    $.getJSON("https://emilyiverson.net/data.json", function(data){
+    $.getJSON("https://emilyiverson.net/js/data.json", function(data){
         alert(data);
     });
 });
